@@ -10,10 +10,10 @@ int win_width = 600;
 int win_height = 480;
 
 vector<Particle> particles;
-int qtd_particles = 30;
+int amount_particles = 30;
 
 void init_particles() {
-    for (int i = 0; i < qtd_particles; i++) {
+    for (int i = 0; i < amount_particles; i++) {
         Vector3D pos(random(30, win_width - 30), random(30, win_height - 30),
                      0);
         Vector3D vel(random(-3, 3), random(-3, 3), 0);
