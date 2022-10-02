@@ -13,7 +13,7 @@ Vector3D pos(win_width / 2, win_height / 2, 0);
 Vector3D vel(0, -1, 0);
 Vector3D acc(0, 0, 0);
 float radius = 1;
-float color[] = {0.5, 0.1, 0};
+float color[] = {0.9, 0.2, 0.8};
 
 Particle p(pos, vel, acc, radius, color);
 
