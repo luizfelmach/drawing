@@ -39,6 +39,7 @@ void apply_forces(Particle& p) { p.update(); }
 
 float calculate_force(Particle p) {
     Vector3D pos = p.get_pos();
+    pos.sub(center_planet);
     float g = 10;
     float mass = 5000;
     return (g * mass) / pow(pos.module(), 2);
