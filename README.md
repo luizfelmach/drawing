@@ -39,9 +39,7 @@ After that, **clone** this repository and **build** the files.
 ```bash
 git clone https://github.com/luizfelmach/drawing.git
 cd drawing
-mkdir build
-cd build
-cmake ..
+make
 ./build/linux/x86_64/release/particles # run the example particles
 ```
 
