@@ -15,13 +15,14 @@
 ---
 ### About
 
-This is a repository to **improve** my C++ skills and have fun **drawing** in windows.
+This is a repository to **improve** my C++ skills and have fun **drawing** on the screen.
 
 <a name="How-to-Run"></a>
+
 ---
 ### How to Run
 
-To draw on the window it is **necessary** to install [libxd](https://bernhardfritz.github.io/libxd/#/) on your operating system.
+To draw on the screen it is **necessary** to install [libxd](https://bernhardfritz.github.io/libxd/#/) on your operating system.
 
 ```bash
 git clone --recursive https://github.com/bernhardfritz/libxd.git
