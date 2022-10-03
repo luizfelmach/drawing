@@ -61,9 +61,47 @@ if(MSVC)
         MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 endif()
 target_sources(library PRIVATE
-    lib/vector3d.cpp
-    lib/particle.cpp
     lib/object.cpp
+    lib/particle.cpp
+    lib/vector3d.cpp
+)
+
+# target
+add_executable(newtons_cannon "")
+set_target_properties(newtons_cannon PROPERTIES OUTPUT_NAME "newtons_cannon")
+set_target_properties(newtons_cannon PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/build/linux/x86_64/release")
+add_dependencies(newtons_cannon library)
+target_include_directories(newtons_cannon PRIVATE
+    include
+)
+target_compile_options(newtons_cannon PRIVATE
+    $<$<COMPILE_LANGUAGE:C>:-m64>
+    $<$<COMPILE_LANGUAGE:CXX>:-m64>
+)
+if(MSVC)
+    set_property(TARGET newtons_cannon PROPERTY
+        MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+endif()
+target_link_libraries(newtons_cannon PRIVATE
+    xd
+    glad
+    glfw3
+    rt
+    m
+    dl
+    X11
+    pthread
+    library
+)
+target_link_directories(newtons_cannon PRIVATE
+    lib
+    build/linux/x86_64/release
+)
+target_link_options(newtons_cannon PRIVATE
+    -m64
+)
+target_sources(newtons_cannon PRIVATE
+    src/newtons_cannon.cpp
 )
 
 # target
